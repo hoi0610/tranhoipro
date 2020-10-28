@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+       .hoten,.gioitinh,.diachi,.dienthoai,.email,.chontour,.phuongtien,.thongtinkhac,.dangki{
+           display: flex;
+       }
+       #hoten-id,#gioitinh,#diachi,#dienthoai,#email,#tour{
+          margin-right: 200px;
+       }
+       .thongtinkhac{
+           width: 50%;
+           height: 150px;
+       }
+    </style>
+</head>
+<body>
+    <form action="" name="myform" onsubmit="return validateForm()" >
+    <div class= 'body'>
+           <div class='hoten'>
+               <div>Họ Tên(*)</div>
+               <div >
+                   <input type="text" placeholder="nhap ho ten" id="hoten" name='name' >
+               </div>
+           </div>
+           <div class ='gioitinh'>
+               <div>Gioi Tinh(*)</div>
+                <div id='gioitinh'>
+                    <input type="radio" value='2' name='gioitinh'>nam
+                    <input type="radio" value='1'name='gioitinh'>nu
+                </div>
+           </div>
+           <div  class='diachi'>
+               <div>Dia Chi(*)</div>
+               <div>
+                   <input type="text" name="diachi" id="diachi">
+               </div>
+           </div>
+           <div class='dienthoai'>
+               <div >Dien Thoai(*)</div>
+               <div><input type="text" name='dienthoai' id='dienthoai'></div>
+           </div>
+           <div  class='email'>
+               <div>Email(*)</div>
+               <div><input type="email" name ='email' id='email'></div>
+           </div>
+           <div  >
+           <div class='chontour' >
+               <div >Chon Tour</div>
+               <div id='tour' name ='tour'>
+                   <input type="checkbox"  value='1' name ='halong'>ha long
+                   <input type="checkbox" value ='1'name ='sapa'>Sapa
+                   <input type="checkbox" value='1'name ='dalat'>Da Lat
+               </div>    
+           </div>
+           <div class='phuongtien'>
+               <div>Phuong Tien</div>
+               <div>
+                   <select name="tour" id="" value=''>
+                       <option value="0">Chon Phuong Tien</option>
+                       <option value="1">oto</option>
+                       <option value="2">tau hoa</option>
+                       <option value="3">may bay</option>
+                   </select>
+  
+               </div>
+           </div>
+           <div class='thongtinkhac'>
+               <div>Thong tin khac</div>
+               <input type="area">
+           </div>
+           
+    </div>
+    <div class='dangki'>
+        <button type='submit' onclick="validateForm()">dang ki</button>
+        <button type ='reset'>nhap lai</button>
+    </div>
+    </form>
+   <script>
+       function validateForm(){
+          var user=document.myform.name.value; 
+          var diachi=document.myform.diachi.value;
+          var dienthoai=document.myform.dienthoai.value;
+          var email=document.myform.email.value;
+          var gioitinh=document.myform.gioitinh.value;
+          var halong=document.myform.halong.value;
+          var sapa=document.myform.sapa.value;
+          var dalat=document.myform.dalat.value;
+          console.log(tour);
+          
+          if(user == ""){
+              alert('Ban phai nhap tat ca cac o (*)');
+              return false;
+          }
+         
+          else if(diachi==""){
+              alert('Ban phai nhap tat ca cac o (*)');
+              return false;
+          }
+          else if(gioitinh != 1 && gioitinh != 2){
+              alert('ban phai chon gioi tinh');
+              return false;
+          }
+         else if(diachi==""){
+              alert('Ban phai nhap tat ca cac o (*)');
+              return false;
+          }
+         else if(dienthoai==""){
+              alert('Ban phai nhap tat ca cac o (*)');
+              return false;
+          }
+          else if(email==""){
+              alert('Ban phai nhap tat ca cac o (*)');
+              return false;
+          }
+          else if(halong== ! 1){
+              alert('ban phai chon 1 trong 3 tour');
+              return false;
+          }
+          else if(sapa == ! 1){
+              alert('Ban phai chon 1 trong 3 tour');
+              return false;
+          }
+          else if(dalat== ! 1){
+              alert("ban phai chon 1 trong 3 tour");
+          }
+
+          return true;
+     
+    }
+       
+           
+   </script>
+
+
+</body>
+</html>
